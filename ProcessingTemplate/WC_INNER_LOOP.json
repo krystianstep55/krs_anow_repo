@@ -1,0 +1,30 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "MONTH",
+  "owner": "krystian.stepien@infinitedata.com",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "workflowType": "CYCLE",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "cycleCounter": 21,
+    "cycleDelay": 2000,
+    "cycleDelayMode": "FINISH_TO_START",
+    "cycleFailMode": "RESTART_NONE",
+    "cycleType": "COUNTER"
+  },
+  "items": 
+  [
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "SLEEP_1",
+      "processingTemplate": "SLEEP_1",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH"
+    }
+  ]
+}

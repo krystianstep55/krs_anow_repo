@@ -1,0 +1,32 @@
+{
+  "folder": "KS",
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "ANOW_OS",
+  "owner": "KS001",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "statisticMethod": "MEDIAN",
+  "statisticPeriod": "ALL",
+  "tags": 
+  [
+    "KS"
+  ],
+  "taskType": "PYTHON",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "import time\nprint(\"Sleeping for: ${sleep_interval} seconds\")\ntime.sleep(${sleep_interval})\n"
+  },
+  "designParameters": 
+  [
+    {
+      "defaultValue": "30",
+      "editorType": "TEXT",
+      "name": "sleep_interval",
+      "title": "sleep_interval"
+    }
+  ]
+}
