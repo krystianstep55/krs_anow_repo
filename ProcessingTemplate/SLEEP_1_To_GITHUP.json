@@ -1,0 +1,34 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "ANOW_OS",
+  "owner": "krystian.stepien",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "tags": 
+  [
+    "TAG1"
+  ],
+  "taskType": "SH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "sleep 1\necho ${loadDate}\ndate"
+  },
+  "actions": 
+  [
+    {
+      "processingActionType": "NOTIFY_CHANNEL",
+      "processingEventCategory": "PROCESSING",
+      "processingEventType": "PROCESSING_FINISHED",
+      "processingCommand": {
+        "notificationChannel": "groovy_function",
+        "notificationChannelParameters": "{\n    \"subject\":\"test\", \n    \"message\":\"testMessage\"\n}"
+      }
+    }
+  ]
+}
