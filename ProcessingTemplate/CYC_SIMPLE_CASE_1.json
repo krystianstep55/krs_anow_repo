@@ -1,0 +1,62 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "MONTH",
+  "owner": "krystian.stepien@infinitedata.com",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "workflowType": "CYCLE",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "cycleDelay": 60000,
+    "cycleDelayMode": "FINISH_TO_START",
+    "cycleDuration": 81900000,
+    "cycleFailMode": "RESTART_NONE",
+    "cycleType": "TIME"
+  },
+  "items": 
+  [
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "SLEEP_8",
+      "processingTemplate": "SLEEP_8",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "SLEEP_8",
+      "dependencies": 
+      [
+        {
+          "dependencyType": "RESOURCE",
+          "name": "maxNumberOfTaskRunning",
+          "processingStatus": "COMPLETED",
+          "processingType": "WORKFLOW",
+          "resource": "maxNumberOfTaskRunning",
+          "resourcePermits": "1",
+          "resourceType": "STOCK",
+          "workflowType": "CYCLE"
+        },
+        {
+          "dependencyType": "RESOURCE",
+          "lockState": "EXCLUSIVE",
+          "name": "LO_INTRADAY_1",
+          "processingStatus": "COMPLETED",
+          "processingType": "WORKFLOW",
+          "resource": "LO_INTRADAY_1",
+          "resourceType": "LOCK",
+          "workflowType": "CYCLE"
+        }
+      ]
+    },
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "PY_RANDOM_SLEEP_for_cyclic",
+      "processingTemplate": "PY_RANDOM_SLEEP_for_cyclic",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH"
+    }
+  ]
+}

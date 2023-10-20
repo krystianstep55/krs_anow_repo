@@ -1,0 +1,21 @@
+{
+  "folder": "KS",
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "ANOW_OS",
+  "owner": "KS001",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "tags": 
+  [
+    "KS"
+  ],
+  "taskType": "PYTHON",
+  "processingCommand": {
+    "script": "import random\nimport time\n\nN = random.randint(10, 30)\nprint(\"Sleeping for: \", N, ' seconds.')\ntime.sleep(N)\n\n\n"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "folder": "KS",
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "ANOW_OS",
+  "owner": "KS001",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "taskType": "SH",
+  "processingCommand": {
+    "script": "echo ANOWVAR:PARENT.EVENT_VAR='aassdff'\nsleep 21"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "MONTH",
+  "owner": "krystian.stepien@infinitedata.com",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "workflowType": "CYCLE",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "cycleDelay": 30000,
+    "cycleDelayMode": "FINISH_TO_START",
+    "cycleDuration": 81900000,
+    "cycleFailMode": "RESTART_NONE",
+    "cycleType": "TIME"
+  },
+  "items": 
+  [
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "SLEEP_5",
+      "processingTemplate": "SLEEP_5",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "SLEEP_5",
+      "dependencies": 
+      [
+        {
+          "dependencyType": "RESOURCE",
+          "name": "maxNumberOfTaskRunning",
+          "processingStatus": "COMPLETED",
+          "processingType": "WORKFLOW",
+          "resource": "maxNumberOfTaskRunning",
+          "resourcePermits": "1",
+          "resourceType": "STOCK",
+          "workflowType": "CYCLE"
+        }
+      ]
+    }
+  ]
+}

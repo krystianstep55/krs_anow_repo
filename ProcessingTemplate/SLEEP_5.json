@@ -1,0 +1,16 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "ANOW_OS",
+  "owner": "jakub.szulgit@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "taskType": "SH",
+  "processingCommand": {
+    "script": "sleep 5"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "MONTH",
+  "owner": "krystian.stepien@infinitedata.com",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "workflowType": "CYCLE",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "cycleCondition": {
+      "criteria": 
+      [
+        {
+          "fieldName": "1",
+          "operator": "EQ_NUM",
+          "value": "1"
+        }
+      ],
+      "operator": "AND"
+    },
+    "cycleDelay": 300000,
+    "cycleDelayMode": "FINISH_TO_START",
+    "cycleFailMode": "RESTART_NONE",
+    "cycleType": "WHILE"
+  },
+  "items": 
+  [
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "PY_RANDOM_SLEEP",
+      "processingTemplate": "PY_RANDOM_SLEEP",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "PY_RANDOM_SLEEP",
+      "actions": 
+      [
+        {
+          "processingActionType": "FORCE_COMPLETED",
+          "processingEventCategory": "PROCESSING",
+          "processingEventType": "PROCESSING_FINISHED",
+          "condition": {
+            "criteria": 
+            [
+              {
+                "fieldName": "${STOP_CYC}",
+                "operator": "EQ_NUM",
+                "value": "1"
+              }
+            ],
+            "operator": "AND"
+          },
+          "processingCommand": {
+            "actionTargetType": "RELATED",
+            "keepForcedStatus": true,
+            "relation": {
+              "relationType": "PARENT"
+            },
+            "restartType": "RESTART_FROM_BEGINNING"
+          }
+        }
+      ]
+    }
+  ]
+}

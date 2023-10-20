@@ -1,0 +1,70 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "MONTH",
+  "owner": "krystian.stepien@infinitedata.com",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "workflowType": "CYCLE",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "cycleDayOffset": 0,
+    "cycleDelay": 1020000,
+    "cycleDelayMode": "FINISH_TO_START",
+    "cycleFailMode": "RESTART_NONE",
+    "cycleRestartUntil": 84600000,
+    "cycleType": "TIME_OF_DAY"
+  },
+  "items": 
+  [
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "SLEEP_21",
+      "processingTemplate": "SLEEP_21",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH"
+    },
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "WC_INNER_LOOP",
+      "processingTemplate": "WC_INNER_LOOP",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "dependencies": 
+      [
+        {
+          "dependencyType": "PREDECESSOR",
+          "name": "SLEEP_21",
+          "predecessor": "SLEEP_21",
+          "processingStatus": "COMPLETED",
+          "processingType": "TASK",
+          "serverNodeType": "LINUX",
+          "taskType": "SH"
+        }
+      ]
+    },
+    {
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "MONTH",
+      "name": "SLEEP_15",
+      "processingTemplate": "SLEEP_15",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "dependencies": 
+      [
+        {
+          "dependencyType": "PREDECESSOR",
+          "name": "WC_INNER_LOOP",
+          "predecessor": "WC_INNER_LOOP",
+          "processingStatus": "COMPLETED",
+          "processingType": "WORKFLOW",
+          "workflowType": "CYCLE"
+        }
+      ]
+    }
+  ]
+}

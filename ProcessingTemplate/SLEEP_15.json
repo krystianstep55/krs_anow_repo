@@ -1,0 +1,29 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "ANOW_OS",
+  "owner": "krystian.stepien",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "taskType": "SH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "date\necho \"EVENT_VAR: ${EVENT_VAR}\"\necho \"IN_PARAM_1: ${IN_PARAM_1}\"\nsleep 15\ndate"
+  },
+  "designParameters": 
+  [
+    {
+      "allowExpressions": true,
+      "defaultValue": "Value_1",
+      "editorType": "TEXT",
+      "name": "IN_PARAM_1",
+      "required": true,
+      "title": "IN_PARAM_1"
+    }
+  ]
+}
